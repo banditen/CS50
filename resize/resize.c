@@ -63,11 +63,11 @@ int main(int argc, char *argv[])
         return 4;
     }
 
-    //writing the outfile's BITMAPFILEHEADER and BITMAPINFOHEADER
+    // writing the outfile's BITMAPFILEHEADER and BITMAPINFOHEADER
     BITMAPFILEHEADER new_bf = bf;
     BITMAPINFOHEADER new_bi = bi;
 
-    //rescaling the outfile's width and height
+    // rescaling the outfile's width and height
     new_bi.biWidth *= n;
     new_bi.biHeight *= n;
 
