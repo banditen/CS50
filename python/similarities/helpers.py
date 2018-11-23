@@ -53,4 +53,3 @@ def compare(a, b):
                 data.append(k)
 
     return data
-
