@@ -1,4 +1,4 @@
-# CS50 assigments
+# CS50 assignments
 
 Table of Contents:
 
