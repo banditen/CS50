@@ -104,5 +104,4 @@ bool is_rest(string s)
     {
         return false;
     }
-
 }
