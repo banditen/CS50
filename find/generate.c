@@ -20,13 +20,11 @@ int main(int argc, string argv[])
     }
 
     // Converts the first character in array into integer
-
     int n = atoi(argv[1]);
 
     // This step is necessary to initialize drand48()
     // If command-line argument equals 2, set [s] as seed for rand() function
     // else call it without initializing seed value
-
     if (argc == 3)
     {
         srand48((long int) atoi(argv[2]));
@@ -37,7 +35,6 @@ int main(int argc, string argv[])
     }
 
     // Looping through command and printing n random numbers within the limit
-
     for (int i = 0; i < n; i++)
     {
         printf("%i\n", (int) (drand48() * LIMIT));
