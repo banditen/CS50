@@ -212,8 +212,7 @@ class Adventure():
                 # Because rooms with conditinal moves are stored as lists, we need
                 # to check if the new room's directions are stored in a list
                 if isinstance(new_room, list):
-                    new_room = min(x for x in new_room if isinstance(x, int) and not isinstance(x, bool))
-                    self.current_room = self.rooms[new_room]
+                    self.current_room = self.rooms[int(new_room[2])]
                     Adventure.forced(self, direction)
 
                 else:
