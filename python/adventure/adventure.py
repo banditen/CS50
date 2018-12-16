@@ -67,7 +67,7 @@ class Adventure():
                 if "/" in str(target_room_id):
                     # We store the conditional movement to a list, and add the list
                     # to room routes
-                    target_room_id, condition = str(target_room_id).split("/")
+                    target_room_id, condition = target_room_id.split("/")
                     if connection not in room.routes.keys():
                         conditional = [int(target_room_id), condition]
                         room.add_route(connection, conditional)
@@ -185,9 +185,8 @@ class Adventure():
         Returns a boolean.
         """
         victory = 0
-        # We need to parse the current room's items to find the
-        # last/dead-end room, and when it equals '0', the game
-        # terminates
+        # If the current room has a route of '0',
+        # the game terminates
         if victory in self.current_room.routes.values():
             return True
         else:
@@ -205,7 +204,6 @@ class Adventure():
         if direction not in self.current_room.routes:
             print("Invalid command!")
             return
-
         else:
             new_room = self.current_room.routes[direction]
             # Then we have to check if player's inventory is empty or not
