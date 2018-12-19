@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Order History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-borderd">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Timestamp</th>
+            </tr>
+            <tbody>
+                {% for order in history %}
+                <tr>
+                    <td>{{ order.symbol }}</td>
+                    <td>{{ order.shares }}</td>
+                    <td>{{ (order.price * order.shares) | usd }}</td>
+                    <td>{{ order.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </thead>
+    </table>
+{% endblock %}

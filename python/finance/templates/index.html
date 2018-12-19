@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered">
+        <thead>
+            <th>Quote</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+            {% for holdings in portfolio %}
+            <tr>
+                <td>{{ holdings.symbol }}</td>
+                <td>{{ holdings.number_of_shares }}</td>
+                <td>{{ holdings.price | usd }}</td>
+                <td>{{ (holdings.price * holdings.number_of_shares) | usd }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Remaining Balance:</td>
+                <td>{{ cash_available | usd}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
